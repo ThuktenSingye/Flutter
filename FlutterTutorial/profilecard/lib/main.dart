@@ -4,9 +4,16 @@ void main () => runApp(const MaterialApp(
   home: ProfileCard(),
 ));
 
-class ProfileCard extends StatelessWidget {
+class ProfileCard extends StatefulWidget {
   const ProfileCard({super.key});
 
+  @override
+  State<ProfileCard> createState() => _ProfileCardState();
+}
+
+class _ProfileCardState extends State<ProfileCard> {
+
+  int level = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,6 +23,17 @@ class ProfileCard extends StatelessWidget {
         backgroundColor: Colors.grey[850],
         elevation: 0.0, // remove drop shadow
       ),      
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          // changes the state and re render the build function
+          setState(() {
+            level += 1;
+          });
+        },
+        child: Icon(
+          Icons.add),
+          backgroundColor: Colors.grey[800],
+      ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
         child: Column(
@@ -58,7 +76,7 @@ class ProfileCard extends StatelessWidget {
             ),
             SizedBox(height: 10.0,), // adding space between two widget
             Text(
-              '8',
+              '${level}',
               style: TextStyle(
                 color: Colors.amberAccent[200],
                 letterSpacing: 2.0,
@@ -90,3 +108,18 @@ class ProfileCard extends StatelessWidget {
     );
   }
 }
+// // statful widget is used when state of widget changes over time # dynamic Widget
+// class Test extends StatefulWidget {
+//   const Test({super.key});
+
+//   @override
+//   State<Test> createState() => _MyTestState(); // return state object and link to test widget
+// }
+
+// class _MyTestState extends State<Test> { // creating state object
+//   int counter = 1;
+//   @override
+//   Widget build(BuildContext context) {
+//     return const Placeholder();
+//   }
+// }
