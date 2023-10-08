@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 // void main() => runApp(
 //   // widget
 //   const Center(
@@ -28,34 +27,36 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.red[600],
       ),
-      body: Column(
-        // main axis alignment to control vertical 
-        // cross axis alignment to control horizontal
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
+      body: Row(
         children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text('Hello'),
-              Text('World'),
-            ],
+          // expanded widget good for wrapping an image or contain child images
+          Expanded(
+            flex: 1,
+            child: Image.asset('assets/ddc.jpg')),
+          Expanded(
+            flex: 2,
+            child: Container(
+              padding: EdgeInsets.all(30.0),
+              color: Colors.green,
+              child: Text('One'),
+            ),
           ),
-          Container(
-            padding: EdgeInsets.all(20.0),
-            color: Colors.cyan,
-            child: Text('One'),
-          ),
-          Container(
-            padding: EdgeInsets.all(30.0),
-            color: Colors.pinkAccent,
-            child: Text('Two'),
-          ),
-          Container(
-            padding: EdgeInsets.all(40.0),
-            color: Colors.amber,
-            child: Text('Three'),
-          ),
+          Expanded(
+            flex: 2,
+            child:Container(
+              padding: EdgeInsets.all(30.0),
+              color: Colors.pinkAccent,
+              child: Text('Two'),
+            ),
+           ),
+           Expanded(
+            flex: 1,
+            child:  Container(
+              padding: EdgeInsets.all(30.0),
+              color: Colors.amber,
+              child: Text('3'),
+            ),
+           ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
