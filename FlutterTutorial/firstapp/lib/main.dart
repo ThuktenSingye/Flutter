@@ -28,28 +28,34 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.red[600],
       ),
-      body: Row(
-        // similar to flex layout in css
-        // main axis property to control horizontal alignment  
-        // cross axis property to control vertical alignment
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      body: Column(
+        // main axis alignment to control vertical 
+        // cross axis alignment to control horizontal
+        mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Text('Hello world'),
-          ElevatedButton(
-            onPressed: () {
-              print('You Click ');
-            }, 
-            child: Text('Click Me'),
-            style: ButtonStyle(
-              foregroundColor: MaterialStateProperty.all<Color>(Colors.amber),
-            ),
-            ),
-            Container(
-              color: Colors.cyan,
-              padding: EdgeInsets.all(30.0),
-              child: Text('inside container'),
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text('Hello'),
+              Text('World'),
+            ],
+          ),
+          Container(
+            padding: EdgeInsets.all(20.0),
+            color: Colors.cyan,
+            child: Text('One'),
+          ),
+          Container(
+            padding: EdgeInsets.all(30.0),
+            color: Colors.pinkAccent,
+            child: Text('Two'),
+          ),
+          Container(
+            padding: EdgeInsets.all(40.0),
+            color: Colors.amber,
+            child: Text('Three'),
+          ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
