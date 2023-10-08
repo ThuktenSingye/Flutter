@@ -28,22 +28,30 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.red[600],
       ),
-
-      // if you want only padding you can use padding widget else container if you want both padding and margin
-      // body:Container(
-      //   // EdgeInsets.all() all padding
-      //   // symmetric(ver, hor)  vertical padding, horizontal padding
-      //   // fromLTRB(l, t, r, b) left, top, right, bottom // same case as margin
-      //   padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 20.0),
-      //   color: Colors.grey[400],
-      //   margin: EdgeInsets.all(20.0),
-      //   child: Text('Hello'),
-      // ),
-      body: Padding(
-        padding: EdgeInsets.all(90.0),
-        child: Text('hello world'),
+      body: Row(
+        // similar to flex layout in css
+        // main axis property to control horizontal alignment  
+        // cross axis property to control vertical alignment
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Text('Hello world'),
+          ElevatedButton(
+            onPressed: () {
+              print('You Click ');
+            }, 
+            child: Text('Click Me'),
+            style: ButtonStyle(
+              foregroundColor: MaterialStateProperty.all<Color>(Colors.amber),
+            ),
+            ),
+            Container(
+              color: Colors.cyan,
+              padding: EdgeInsets.all(30.0),
+              child: Text('inside container'),
+            ),
+        ],
       ),
-
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         backgroundColor: Colors.red[600],
