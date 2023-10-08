@@ -40,6 +40,7 @@ class Home extends StatelessWidget {
 
         //   ),
         // ),
+        // Images
         // child: Image(
         //   image: NetworkImage('https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1871&q=80')
         // ),Network Image
@@ -47,8 +48,14 @@ class Home extends StatelessWidget {
         //   image:AssetImage('assets/ddc.jpg')
         // ),
         // the shortcut to above code is given below
-        child : Image.asset('assets/ddc.jpg'),
+        // child : Image.asset('assets/ddc.jpg'),
         // child: Image.network('https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1871&q=80'),
+        // Icons
+        child: Icon(
+          Icons.airport_shuttle,
+          color: Colors.lightBlue,
+          size: 50.0,
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
