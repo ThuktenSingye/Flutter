@@ -38,7 +38,7 @@ class _HomeState extends State<Home> {
                  
                   onPressed: () {
                     // navigate to /location route which is choose location widget
-                    Navigator.pushNamed(context, '/');
+                    Navigator.pushNamed(context, '/location');
                   },
                   icon: Icon(
                     Icons.edit_location,
