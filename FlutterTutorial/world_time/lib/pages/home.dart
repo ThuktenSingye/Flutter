@@ -17,7 +17,7 @@ class _HomeState extends State<Home> {
             ElevatedButton.icon(
               onPressed: () {
                 // navigate to /location route which is choose location widget
-                Navigator.pushNamed(context, '/location');
+                Navigator.pushNamed(context, '/');
               },
               icon: Icon(
                 Icons.edit_location,
