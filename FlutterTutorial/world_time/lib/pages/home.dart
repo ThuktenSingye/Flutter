@@ -50,7 +50,6 @@ class _HomeState extends State<Home> {
                   fontSize: 66.0,
                 ),
               )
-                
             ],
           ),
         ), 
