@@ -25,12 +25,12 @@ class _ChooseLocationState extends State<ChooseLocation> {
     WorldTime instance = locations[index];
     await instance.getTime();
     // navigate to home screen
-    Navigator.pop(context, {
-      'location': instance.location,
-      'flag': instance.flag,
-      'time': instance.time,
-      'isDayTime': instance.isDayTime,
-    });
+    // Navigator.pop(context, {
+    //   'location': instance.location,
+    //   'flag': instance.flag,
+    //   'time': instance.time,
+    //   'isDayTime': instance.isDayTime,
+    // });
 
   }
 
@@ -41,7 +41,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
         backgroundColor: Colors.blue[900],
-        title: Text('Choose the Location'),
+        // title: Text('Choose the Location'),
         centerTitle: true,
         elevation: 0.0,
       ),
